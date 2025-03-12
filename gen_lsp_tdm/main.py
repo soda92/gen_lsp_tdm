@@ -17,7 +17,7 @@ def str_path(p: Path) -> str:
     return str(p).replace("\\", "/")
 
 
-CURRENT = Path(__file__).resolve().parent
+CURRENT = Path(os.getcwd()).resolve()
 
 
 def which(name):
@@ -80,6 +80,7 @@ def main():
     obj = fix_commands(commands)
     s = json.dumps(obj, indent=2)
     write_path(CURRENT.joinpath(args.destdir).joinpath("compile_commands.json"), s)
+
 
 if __name__ == "__main__":
     main()
