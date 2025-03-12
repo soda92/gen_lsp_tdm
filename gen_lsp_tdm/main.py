@@ -3,18 +3,7 @@ import json
 import os
 import functools
 import argparse
-
-
-def read_path(p: Path) -> str:
-    return p.read_text(encoding="utf8")
-
-
-def write_path(p: Path, content: str) -> None:
-    p.write_text(content, encoding="utf8")
-
-
-def str_path(p: Path) -> str:
-    return str(p).replace("\\", "/")
+from sodatools import read_path, write_path, str_path
 
 
 CURRENT = Path(os.getcwd()).resolve()
@@ -82,5 +71,14 @@ def main():
     write_path(CURRENT.joinpath(args.destdir).joinpath("compile_commands.json"), s)
 
 
+def init():
+    p = r"c:/TDM-GCC-64/virtual"
+    if not Path(p).exists():
+        from gen_lsp_tdm.gen_lsp_for_gcc.main import lsp_init
+
+        lsp_init()
+
+
 if __name__ == "__main__":
+    init()
     main()

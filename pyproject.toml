@@ -1,10 +1,12 @@
 [project]
 name = "gen-lsp-tdm"
-version = "2025.3.12.3"
+version = "2025.3.12.4"
 description = "Fix compile commands for gcc/tdm-gcc for use with clangd on Windows"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "sodatools>=2025.2.16.0",
+]
 
 [project.urls]
 Repository = "https://github.com/soda92/gen_lsp_tdm"
