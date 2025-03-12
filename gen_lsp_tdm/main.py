@@ -3,18 +3,7 @@ import json
 import os
 import functools
 import argparse
-
-
-def read_path(p: Path) -> str:
-    return p.read_text(encoding="utf8")
-
-
-def write_path(p: Path, content: str) -> None:
-    p.write_text(content, encoding="utf8")
-
-
-def str_path(p: Path) -> str:
-    return str(p).replace("\\", "/")
+from sodatools import read_path, write_path, str_path
 
 
 CURRENT = Path(os.getcwd()).resolve()
