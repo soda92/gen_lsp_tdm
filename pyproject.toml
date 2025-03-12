@@ -1,6 +1,6 @@
 [project]
 name = "gen-lsp-tdm"
-version = "2025.3.12.1"
+version = "2025.3.12.2"
 description = "Fix compile commands for gcc/tdm-gcc for use with clangd on Windows"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -25,3 +25,4 @@ exclude = ["__pycache__", "*.pyc", "*.exe~", "*.syso"]
 
 [project.scripts]
 gen_lsp_tdm = "gen_lsp_tdm.main:main"
+tdm_cmake_init = "gen_lsp_tdm.cmake_init:tdm_cmake_init"
