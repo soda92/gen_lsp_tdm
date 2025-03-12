@@ -3,6 +3,8 @@
 ## setup
 install `gen-lsp-tdm` from [PYPI](pypi), and [make][make]/[cmake][cmake] from scoop, and tdm-gcc from [official website][tdm]
 
+then clone this repo, change to directory `demo` (this directory)
+
 ## usage
 run `tdm_cmake_init`
 then run `make`

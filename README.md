@@ -8,4 +8,4 @@ run gen_lsp_tdm after build
 
 See [DEMO][demo]
 
-[demo]: https://github.com/soda92/gen_lsp_tdm/demo/README.md
+[demo]: https://github.com/soda92/gen_lsp_tdm/blob/main/demo/README.md
