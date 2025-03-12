@@ -82,5 +82,14 @@ def main():
     write_path(CURRENT.joinpath(args.destdir).joinpath("compile_commands.json"), s)
 
 
+def init():
+    p = r"c:/TDM-GCC-64/virtual"
+    if not Path(p).exists():
+        from gen_lsp_tdm.gen_lsp_for_gcc.main import lsp_init
+
+        lsp_init()
+
+
 if __name__ == "__main__":
+    init()
     main()
