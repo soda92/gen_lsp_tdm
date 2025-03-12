@@ -1,6 +1,6 @@
 [project]
 name = "gen-lsp-tdm"
-version = "2025.3.12.3"
+version = "2025.3.12.4"
 description = "Fix compile commands for gcc/tdm-gcc for use with clangd on Windows"
 readme = "README.md"
 requires-python = ">=3.10"

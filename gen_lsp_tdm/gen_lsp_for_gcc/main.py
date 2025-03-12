@@ -41,6 +41,7 @@ def write_virtual(f):
 def lsp_init():
     tdm_dir = r"c:/TDM-GCC-64"
     tdm_dir_v = r"c:/TDM-GCC-64/virtual"
+    Path(tdm_dir_v).mkdir()
     db = Path(tdm_dir_v).joinpath("compile_commands.json")
 
     dirs = [
