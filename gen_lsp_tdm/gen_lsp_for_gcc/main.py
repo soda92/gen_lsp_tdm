@@ -37,6 +37,9 @@ def write_virtual(f):
     except UnicodeDecodeError:
         return
 
+    if vfile == Path(r"C:\TDM-GCC-64\virtual\x86_64-w64-mingw32\include\_mingw.h"):
+        write_path(vfile, read_path(vfile).replace("#define \n", ""))
+
 
 def lsp_init():
     tdm_dir = r"c:/TDM-GCC-64"
