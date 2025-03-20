@@ -1,11 +1,12 @@
 import json
 import glob
 
+from typing import List
 from pathlib import Path
 from sodatools import write_path, str_path, read_path
 
 
-def get_file_list(i: str):
+def get_file_list(i: str) -> List[Path]:
     lis = list(glob.glob("**/*", recursive=True, root_dir=i))
     ret = []
     for p in lis:
@@ -14,13 +15,13 @@ def get_file_list(i: str):
     return ret
 
 
-def fix_content(c):
+def fix_content(c: str) -> str:
     c = c.replace("__MINGW_ATTRIB_NORETURN", "")
     c = c.replace("__MINGW_NOTHROW", "")
     return c
 
 
-def write_virtual(f):
+def write_virtual(f: Path):
     if f.is_dir():
         return
     global cnt
@@ -36,6 +37,9 @@ def write_virtual(f):
         write_path(vfile, c)
     except UnicodeDecodeError:
         return
+
+    if vfile == Path(r"C:\TDM-GCC-64\virtual\x86_64-w64-mingw32\include\_mingw.h"):
+        write_path(vfile, read_path(vfile).replace("#define \n", ""))
 
 
 def lsp_init():
